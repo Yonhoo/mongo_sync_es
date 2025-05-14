@@ -14,4 +14,5 @@ WORKDIR /app/docker/plugin
 
 RUN go mod download
 
-RUN go build -buildmode=plugin -o $PLUGIN.so $PLUGIN.go
+# Compile the specific plugin file
+RUN go build -buildmode=plugin -o ${PLUGIN}.so ./${PLUGIN}.go

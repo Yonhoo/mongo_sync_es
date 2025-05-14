@@ -29,4 +29,7 @@ docker cp "$CONTAINER_ID":/app/docker/plugin/${plugin}.so ./docker-build/${plugi
 # Stop the container (it'll be removed automatically once stopped, as we used `--rm`)
 docker stop "$CONTAINER_ID"
 
-echo "Plugin built successfully! The compiled .so file is in ./docker-build/${plugin}.so"
+# Copy the .so file to the docker/plugin directory
+cp ./docker-build/${plugin}.so ./${plugin}.so
+
+echo "Plugin built successfully! The compiled .so file is in ./docker-build/${plugin}.so and has been copied to ./docker/plugin/${plugin}.so"

@@ -1,16 +1,26 @@
-name: Monstache CI
+name: Build Plugin
 
 on:
   push:
     branches: [ '*' ]
 
 jobs:
-  test:
-    name: Run tests
+  build-plugin:
+    name: Build Monstache Plugin
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run tests
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build plugin
         run: |
-          cd docker/plugin
+          cd /docker/plugin
+          chmod +x build.sh
           ./build.sh
+
+      - name: Upload plugin artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: collection_process-plugin
+          path: /docker/plugin/collection_process.so
+          retention-days: 90

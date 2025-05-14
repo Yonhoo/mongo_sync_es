@@ -19,7 +19,7 @@ jobs:
           ./build.sh
 
       - name: Upload plugin artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: collection_process-plugin
           path: /docker/plugin/collection_process.so

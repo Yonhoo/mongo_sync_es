@@ -23,4 +23,3 @@ jobs:
         with:
           name: collection_process-plugin
           path: /docker/plugin/collection_process.so
-          retention-days: 90

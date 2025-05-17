@@ -81,7 +81,7 @@ verbose = true
 #namespace = "translation.info"
 #index = "hotmovies"
 #type = "movies"
-mapper-plugin-path = "./collection_process.so"
+mapper-plugin-path = "/Users/yon/GolandProjects/mongoProject/mongo_sync_es/docker/plugin/docker-build/collection_process.so"
 #[[mapping]]
 #namespace = "mydb.col"
 #index = "mydbcol"

@@ -1,0 +1,23 @@
+name: Build and Upload Monstache Binary
+
+on:
+  push:
+    branches: [ '*' ]
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Monstache binary
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Upload Monstache binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: monstache-bin
+          path: ./monstache

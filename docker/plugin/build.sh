@@ -1,6 +1,7 @@
 #!/bin/bash
 
-plugin=$(<.plugin)
+# 读取 .plugin 文件内容作为插件名
+plugin=$(cat .plugin | tr -d '\r\n')
 
 # # Build a docker image
 docker build --build-arg PLUGIN="$plugin" \

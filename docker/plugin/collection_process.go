@@ -1,8 +1,9 @@
-package plugins
+package main
 
 import (
-	"github.com/rwynn/monstache/v6/monstachemap"
 	"strings"
+
+	"github.com/rwynn/monstache/v6/monstachemap"
 )
 
 // Map transforms the document before it's indexed in Elasticsearch

@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . .
 
-COPY /docker/plugin/./${PLUGIN}.go /app/docker/plugin/
+COPY /docker/plugin/${PLUGIN}.go /app/docker/plugin/
 
 RUN go mod download
 

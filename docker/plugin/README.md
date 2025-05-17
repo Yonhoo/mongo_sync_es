@@ -1,5 +1,10 @@
 # Monstache plugin builder
 
+# 注意事项
+
+- `collection_process.go` 必须存在于本目录下。
+- `.plugin` 文件内容必须为 `collection_process`。
+
 You can use the `build.sh` script in this folder to build a golang plugin for monstache using docker.
 
 Copy your plugin source code to the `plugin` folder.  This build assumes the name of the main entry
